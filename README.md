@@ -1,7 +1,7 @@
 <div align="center">
 <h1 align="center">🏎️ Mercedes-AMG F1 — Landing Page</h1>
 </div>
-.....
+
 ![Project Preview](https://github.com/Eduardabarroscbg/mercedes-f1/blob/main/public/images/preview.png)
 
 Uma landing page animada e funcional da equipe **Mercedes-AMG Petronas F1**, construída para explorar **modelagem 3D no desenvolvimento web** usando **Three.js**, **GSAP** e React moderno, com dados reais da temporada via API.
