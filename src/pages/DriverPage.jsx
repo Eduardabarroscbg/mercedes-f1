@@ -76,7 +76,6 @@ const DriverPage = () => {
     return (
         <div className="bg-black min-h-screen">
 
-            {/* Navbar */}
             <div className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-8 py-4 flex items-center justify-between">
                 <button
                     onClick={() => navigate('/')}
@@ -89,8 +88,8 @@ const DriverPage = () => {
                 </span>
             </div>
 
-            {/* HERO DESKTOP: foto absoluta + info à direita */}
-            <div className="relative h-screen overflow-hidden hidden md:flex items-end">
+            {/* HERO — idêntico ao original, sem alteração no desktop */}
+            <div className="relative h-screen flex items-end overflow-hidden">
                 <div
                     className="absolute inset-0"
                     style={{ background: `linear-gradient(135deg, ${driver.color}22 0%, black 60%)` }}
@@ -114,47 +113,29 @@ const DriverPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
-                <div className="driver-info relative z-10 w-1/2 ml-auto p-20 pb-20">
+                {/* Info: escondida no mobile, visível no desktop */}
+                <div className="driver-info relative z-10 w-full md:w-1/2 ml-auto p-10 md:p-20 pb-20 hidden md:block">
                     <p className="font-bold text-sm tracking-widest uppercase mb-2" style={{ color: driver.color }}>
                         {driver.role} · {driver.country}
                     </p>
                     <p className="text-white/50 font-bold text-3xl">{driver.name}</p>
-                    <h1 className="text-white font-bold text-8xl leading-none">{driver.lastname}</h1>
-                    <p className="font-bold text-9xl mt-2" style={{ color: driver.color, opacity: 0.4 }}>
+                    <h1 className="text-white font-bold text-6xl md:text-8xl leading-none">{driver.lastname}</h1>
+                    <p className="font-bold text-8xl md:text-9xl mt-2" style={{ color: driver.color, opacity: 0.4 }}>
                         #{driver.number}
                     </p>
                 </div>
             </div>
 
-            {/* HERO MOBILE: foto em cima ocupando bem a tela, info embaixo */}
-            <div className="md:hidden flex flex-col min-h-screen">
-                {/* Foto com gradiente embaixo */}
-                <div className="relative flex-1" style={{ minHeight: "60vh" }}>
-                    <div
-                        className="absolute inset-0"
-                        style={{ background: `linear-gradient(135deg, ${driver.color}22 0%, black 60%)` }}
-                    />
-                    <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: driver.color }} />
-                    <img
-                        src={driver.image}
-                        alt={driver.name}
-                        className="driver-photo w-full h-full object-cover object-top"
-                        style={{ minHeight: "60vh" }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                </div>
-
-                {/* Info embaixo, fora da foto */}
-                <div className="driver-info bg-black px-8 pt-8 pb-12">
-                    <p className="font-bold text-xs tracking-widest uppercase mb-2" style={{ color: driver.color }}>
-                        {driver.role} · {driver.country}
-                    </p>
-                    <p className="text-white/50 font-bold text-xl">{driver.name}</p>
-                    <h1 className="text-white font-bold text-5xl leading-none">{driver.lastname}</h1>
-                    <p className="font-bold text-7xl mt-1" style={{ color: driver.color, opacity: 0.4 }}>
-                        #{driver.number}
-                    </p>
-                </div>
+            {/* Info mobile: aparece abaixo da foto, sem sobreposição */}
+            <div className="md:hidden px-8 pt-8 pb-4 bg-black">
+                <p className="font-bold text-xs tracking-widest uppercase mb-2" style={{ color: driver.color }}>
+                    {driver.role} · {driver.country}
+                </p>
+                <p className="text-white/50 font-bold text-xl">{driver.name}</p>
+                <h1 className="text-white font-bold text-5xl leading-none">{driver.lastname}</h1>
+                <p className="font-bold text-7xl mt-1" style={{ color: driver.color, opacity: 0.4 }}>
+                    #{driver.number}
+                </p>
             </div>
 
             {/* Stats + Bio */}
