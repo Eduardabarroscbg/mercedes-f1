@@ -51,11 +51,11 @@ const Drivers = () => {
                             <img
                                 src={driver.image}
                                 alt={driver.name}
-                                className="absolute inset-0 w-full h-full object-cover object-center md:object-top transition-transform duration-700 group-hover:scale-105"
+                                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black from-30% via-black/70 via-55% to-transparent" />
                             <span
-                                className="absolute top-8 right-8 font-bold select-none"
+                                className="absolute top-8 right-8 font-bold select-none hidden md:block"
                                 style={{ fontSize: "160px", lineHeight: 1, color: driver.color, opacity: 0.15 }}
                             >
                                 {driver.number}
