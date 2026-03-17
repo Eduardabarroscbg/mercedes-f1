@@ -88,7 +88,6 @@ const DriverPage = () => {
                 </span>
             </div>
 
-            {/* HERO — idêntico ao original no desktop */}
             <div className="relative h-screen flex items-end overflow-hidden">
                 <div
                     className="absolute inset-0"
@@ -106,7 +105,7 @@ const DriverPage = () => {
                     <img
                         src={driver.image}
                         alt={driver.name}
-                        className="h-[90%] object-contain object-top md:object-bottom"
+                        className="h-[90%] object-cover object-top md:object-contain md:object-bottom"
                     />
                 </div>
 
@@ -182,3 +181,8 @@ const DriverPage = () => {
 }
 
 export default DriverPage
+    ```
+
+Só uma linha mudou em relação ao anterior:
+```
+object - cover object - top md: object - contain md: object - bottom
