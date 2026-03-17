@@ -112,7 +112,6 @@ const DriverPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
-                {/* Info: escondida no mobile, visível no desktop */}
                 <div className="driver-info relative z-10 w-full md:w-1/2 ml-auto p-10 md:p-20 pb-20 hidden md:block">
                     <p className="font-bold text-sm tracking-widest uppercase mb-2" style={{ color: driver.color }}>
                         {driver.role} · {driver.country}
@@ -125,7 +124,6 @@ const DriverPage = () => {
                 </div>
             </div>
 
-            {/* Info mobile: abaixo da foto, sem sobreposição */}
             <div className="md:hidden px-8 pt-8 pb-4 bg-black">
                 <p className="font-bold text-xs tracking-widest uppercase mb-2" style={{ color: driver.color }}>
                     {driver.role} · {driver.country}
@@ -137,7 +135,6 @@ const DriverPage = () => {
                 </p>
             </div>
 
-            {/* Stats + Bio */}
             <div className="container mx-auto px-5 py-20">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
                     {driver.stats.map((stat) => (
@@ -181,8 +178,3 @@ const DriverPage = () => {
 }
 
 export default DriverPage
-    ```
-
-Só uma linha mudou em relação ao anterior:
-```
-object - cover object - top md: object - contain md: object - bottom
