@@ -76,6 +76,7 @@ const DriverPage = () => {
     return (
         <div className="bg-black min-h-screen">
 
+            {/* Navbar */}
             <div className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-8 py-4 flex items-center justify-between">
                 <button
                     onClick={() => navigate('/')}
@@ -88,45 +89,75 @@ const DriverPage = () => {
                 </span>
             </div>
 
-            {/* HERO — mobile: coluna (foto em cima, info embaixo) | desktop: lado a lado */}
-            <div className="relative min-h-screen flex flex-col md:flex-row md:items-end overflow-hidden pt-16 md:pt-0">
+            {/* HERO DESKTOP: foto absoluta + info à direita */}
+            <div className="relative h-screen overflow-hidden hidden md:flex items-end">
                 <div
                     className="absolute inset-0"
                     style={{ background: `linear-gradient(135deg, ${driver.color}22 0%, black 60%)` }}
                 />
                 <span
-                    className="absolute right-0 top-1/2 -translate-y-1/2 font-bold select-none pointer-events-none hidden md:block"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 font-bold select-none pointer-events-none"
                     style={{ fontSize: "400px", lineHeight: 1, color: driver.color, opacity: 0.05 }}
                 >
                     {driver.number}
                 </span>
                 <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: driver.color }} />
 
-                {/* Foto */}
-                <div className="driver-photo relative z-10 flex justify-center md:justify-start md:absolute md:bottom-0 md:left-20 md:h-full md:items-end">
+                <div className="driver-photo absolute bottom-0 left-0 md:left-20 h-full flex items-end">
                     <img
                         src={driver.image}
                         alt={driver.name}
-                        className="h-[55vw] max-h-[360px] md:h-[90%] object-contain object-bottom"
+                        className="h-[90%] object-contain object-bottom"
                     />
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black hidden md:block" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
-                {/* Info — mobile: abaixo da foto com fundo escuro | desktop: direita */}
-                <div className="driver-info relative z-10 w-full md:w-1/2 md:ml-auto p-8 md:p-20 md:pb-20 pb-10">
+                <div className="driver-info relative z-10 w-1/2 ml-auto p-20 pb-20">
                     <p className="font-bold text-sm tracking-widest uppercase mb-2" style={{ color: driver.color }}>
                         {driver.role} · {driver.country}
                     </p>
-                    <p className="text-white/50 font-bold text-2xl md:text-3xl">{driver.name}</p>
-                    <h1 className="text-white font-bold text-5xl md:text-8xl leading-none">{driver.lastname}</h1>
-                    <p className="font-bold text-7xl md:text-9xl mt-2" style={{ color: driver.color, opacity: 0.4 }}>
+                    <p className="text-white/50 font-bold text-3xl">{driver.name}</p>
+                    <h1 className="text-white font-bold text-8xl leading-none">{driver.lastname}</h1>
+                    <p className="font-bold text-9xl mt-2" style={{ color: driver.color, opacity: 0.4 }}>
                         #{driver.number}
                     </p>
                 </div>
             </div>
 
+            {/* HERO MOBILE: foto em cima ocupando bem a tela, info embaixo */}
+            <div className="md:hidden flex flex-col min-h-screen">
+                {/* Foto com gradiente embaixo */}
+                <div className="relative flex-1" style={{ minHeight: "60vh" }}>
+                    <div
+                        className="absolute inset-0"
+                        style={{ background: `linear-gradient(135deg, ${driver.color}22 0%, black 60%)` }}
+                    />
+                    <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: driver.color }} />
+                    <img
+                        src={driver.image}
+                        alt={driver.name}
+                        className="driver-photo w-full h-full object-cover object-top"
+                        style={{ minHeight: "60vh" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                </div>
+
+                {/* Info embaixo, fora da foto */}
+                <div className="driver-info bg-black px-8 pt-8 pb-12">
+                    <p className="font-bold text-xs tracking-widest uppercase mb-2" style={{ color: driver.color }}>
+                        {driver.role} · {driver.country}
+                    </p>
+                    <p className="text-white/50 font-bold text-xl">{driver.name}</p>
+                    <h1 className="text-white font-bold text-5xl leading-none">{driver.lastname}</h1>
+                    <p className="font-bold text-7xl mt-1" style={{ color: driver.color, opacity: 0.4 }}>
+                        #{driver.number}
+                    </p>
+                </div>
+            </div>
+
+            {/* Stats + Bio */}
             <div className="container mx-auto px-5 py-20">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
                     {driver.stats.map((stat) => (
