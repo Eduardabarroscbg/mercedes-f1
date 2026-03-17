@@ -88,7 +88,7 @@ const DriverPage = () => {
                 </span>
             </div>
 
-            {/* HERO — idêntico ao original, sem alteração no desktop */}
+            {/* HERO — idêntico ao original no desktop */}
             <div className="relative h-screen flex items-end overflow-hidden">
                 <div
                     className="absolute inset-0"
@@ -106,7 +106,7 @@ const DriverPage = () => {
                     <img
                         src={driver.image}
                         alt={driver.name}
-                        className="h-[90%] object-contain object-bottom"
+                        className="h-[90%] object-contain object-top md:object-bottom"
                     />
                 </div>
 
@@ -126,7 +126,7 @@ const DriverPage = () => {
                 </div>
             </div>
 
-            {/* Info mobile: aparece abaixo da foto, sem sobreposição */}
+            {/* Info mobile: abaixo da foto, sem sobreposição */}
             <div className="md:hidden px-8 pt-8 pb-4 bg-black">
                 <p className="font-bold text-xs tracking-widest uppercase mb-2" style={{ color: driver.color }}>
                     {driver.role} · {driver.country}
@@ -146,7 +146,7 @@ const DriverPage = () => {
                             key={stat.label}
                             className="stat-item bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 text-center hover:border-[#00D2BE]/40 transition-colors"
                         >
-                            <span className="font-bold text-5xl block" style={{ color: driver.color }}>
+                            <span className="font-bold text-3xl md:text-5xl block" style={{ color: driver.color }}>
                                 {stat.value}
                             </span>
                             <span className="text-white/40 text-sm mt-2 block">{stat.label}</span>
