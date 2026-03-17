@@ -1,7 +1,7 @@
 const races = [
     { round: "01", name: "Austrália", circuit: "Albert Park", date: "08 Mar", status: "concluída", position: "1-2" },
-    { round: "02", name: "China", circuit: "Shanghai", date: "15 Mar", status: "próxima", position: null },
-    { round: "03", name: "Japão", circuit: "Suzuka", date: "29 Mar", status: "futura", position: null },
+    { round: "02", name: "China", circuit: "Shanghai", date: "15 Mar", status: "concluída", position: "1-2" },
+    { round: "03", name: "Japão", circuit: "Suzuka", date: "29 Mar", status: "próxima", position: null },
     { round: "04", name: "Bahrain", circuit: "Sakhir", date: "12 Abr", status: "futura", position: null },
     { round: "05", name: "Arábia Saudita", circuit: "Jeddah", date: "19 Abr", status: "futura", position: null },
     { round: "06", name: "Miami", circuit: "Hard Rock Stadium", date: "03 Mai", status: "futura", position: null },

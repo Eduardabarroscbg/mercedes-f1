@@ -42,8 +42,7 @@ const Drivers = () => {
                         <div
                             key={driver.id}
                             onClick={() => navigate(`/piloto/${driver.id}`)}
-                            className="relative overflow-hidden group cursor-pointer"
-                            style={{ height: "600px" }}
+                            className="relative overflow-hidden group cursor-pointer h-[480px] md:h-[600px]"
                         >
                             <div
                                 className="absolute inset-0 opacity-20 transition-opacity duration-500 group-hover:opacity-30"
@@ -52,9 +51,9 @@ const Drivers = () => {
                             <img
                                 src={driver.image}
                                 alt={driver.name}
-                                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                className="absolute inset-0 w-full h-full object-cover object-center md:object-top transition-transform duration-700 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                             <span
                                 className="absolute top-8 right-8 font-bold select-none"
                                 style={{ fontSize: "160px", lineHeight: 1, color: driver.color, opacity: 0.15 }}
@@ -63,16 +62,16 @@ const Drivers = () => {
                             </span>
                             <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: driver.color }} />
 
-                            <div className="absolute bottom-0 left-0 right-0 p-10">
+                            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
                                 <p className="text-sm font-bold tracking-widest uppercase mb-2" style={{ color: driver.color }}>
                                     {driver.role} · {driver.country}
                                 </p>
                                 <div className="flex items-end justify-between">
                                     <div>
                                         <p className="text-white/60 font-bold text-2xl">{driver.name}</p>
-                                        <h3 className="text-white font-bold text-5xl md:text-6xl leading-none">{driver.lastname}</h3>
+                                        <h3 className="text-white font-bold text-4xl md:text-6xl leading-none">{driver.lastname}</h3>
                                     </div>
-                                    <span className="font-bold text-6xl" style={{ color: driver.color, opacity: 0.6 }}>
+                                    <span className="font-bold text-5xl md:text-6xl" style={{ color: driver.color, opacity: 0.6 }}>
                                         #{driver.number}
                                     </span>
                                 </div>
