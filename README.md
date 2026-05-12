@@ -1,4 +1,4 @@
-. <div align="center">
+<div align="center">
 <h1 align="center">🏎️ Mercedes-AMG F1 — Landing Page</h1>
 </div>
 
