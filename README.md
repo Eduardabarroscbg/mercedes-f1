@@ -36,6 +36,8 @@ Este projeto é uma implementação **focada em aprendizado** de uma landing pag
 ## 📂 Estrutura do Projeto
 ```
 src/
+├── assets/
+│   └── react.svg
 ├── components/
 │   ├── Navbar.jsx
 │   ├── Hero.jsx
@@ -45,14 +47,18 @@ src/
 │   ├── Dashboard.jsx
 │   ├── Races.jsx
 │   ├── Partners.jsx
+│   ├── Technology.jsx
 │   └── Footer.jsx
-├── pages/
-│   └── DriverPage.jsx
 ├── constants/
 │   └── index.js
+├── pages/
+│   └── DriverPage.jsx
+├── store/
+│   └── index.js
+├── App.css
 ├── App.jsx
-├── main.jsx
-└── index.css
+├── index.css
+└── main.jsx
 public/
 ├── images/
 │   ├── Mercedes-logo.png
